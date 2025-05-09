@@ -19,7 +19,7 @@ const Footer = () => {
 
           <div className="flex items-center gap-4">
             <a
-              href="https://github.com/roshhni97/insight-data-whisperer"
+              href="https://github.com/roshhni97/InsightAI-Backend"
               className="text-muted-foreground hover:text-foreground transition-colors"
               target="_blank"
               rel="noopener noreferrer"

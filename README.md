@@ -1,73 +1,114 @@
-# Welcome to your Lovable project
+# Insight Data Whisperer
 
-## Project info
+A powerful document analysis and question-answering system that uses AI to extract insights from your documents.
 
-**URL**: https://lovable.dev/projects/af013192-8a6e-4261-b1b2-aa482424599e
+## Features
 
-## How can I edit this code?
+- PDF document processing and analysis
+- Automatic document summarization
+- Key topics extraction
+- Document structure analysis
+- Question answering based on document content
+- Vector-based semantic search
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- **Backend**:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/af013192-8a6e-4261-b1b2-aa482424599e) and start prompting.
+  - Python
+  - FastAPI
+  - LangChain
+  - Azure OpenAI
+  - Supabase (Vector Store)
+  - PostgreSQL
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend**:
+  - Vite
+  - TypeScript
+  - React
+  - shadcn-ui
+  - Tailwind CSS
 
-**Use your preferred IDE**
+## Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Python 3.8+
+- Node.js & npm
+- PostgreSQL with pgvector extension
+- Azure OpenAI API access
+- Supabase account
 
-Follow these steps:
+### Backend Setup
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Clone the repository
+git clone <repository-url>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to backend directory
+cd insight-backend
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Create and activate virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Install dependencies
+pip install -r requirements.txt
+
+# Set up environment variables
+cp .env.example .env
+# Edit .env with your configuration
+
+# Run migrations
+alembic upgrade head
+
+# Start the server
+uvicorn app.main:app --reload
+```
+
+### Frontend Setup
+
+```sh
+# Navigate to frontend directory
+cd insight-data-whisperer
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Environment Variables
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Create a `.env` file in the backend directory with the following variables:
 
-**Use GitHub Codespaces**
+```env
+AZURE_OPENAI_API_KEY=your_api_key
+AZURE_OPENAI_ENDPOINT=your_endpoint
+AZURE_OPENAI_DEPLOYMENT_NAME=your_deployment
+AZURE_OPENAI_API_VERSION=your_api_version
+AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME=your_embedding_deployment
+AZURE_OPENAI_EMBEDDING_API_KEY=your_embedding_api_key
+AZURE_OPENAI_EMBEDDING_ENDPOINT=your_embedding_endpoint
+SUPABASE_URL=your_supabase_url
+SUPABASE_KEY=your_supabase_key
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## API Endpoints
 
-## What technologies are used for this project?
+- `POST /upload`: Upload and process PDF documents
+- `POST /chat`: Ask questions about uploaded documents
+- `GET /documents`: List all processed documents
 
-This project is built with:
+## Contributing
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## How can I deploy this project?
+## License
 
-Simply open [Lovable](https://lovable.dev/projects/af013192-8a6e-4261-b1b2-aa482424599e) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is licensed under the MIT License - see the LICENSE file for details.
