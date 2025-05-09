@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Github } from "lucide-react";
 
@@ -13,16 +12,16 @@ const Footer = () => {
             </div>
             <p className="text-sm font-display font-semibold">InsightAI</p>
           </div>
-          
+
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} InsightAI. All rights reserved.
           </p>
-          
+
           <div className="flex items-center gap-4">
-            <a 
-              href="https://github.com/yourusername/insightai" 
+            <a
+              href="https://github.com/roshhni97/insight-data-whisperer"
               className="text-muted-foreground hover:text-foreground transition-colors"
-              target="_blank" 
+              target="_blank"
               rel="noopener noreferrer"
             >
               <Github size={18} />

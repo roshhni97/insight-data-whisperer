@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -13,13 +12,18 @@ const Header = () => {
           </div>
           <h1 className="text-xl font-display font-bold">InsightAI</h1>
         </div>
-        
+
         <div className="flex items-center gap-4">
           <Button
             variant="outline"
             size="sm"
             className="gap-2"
-            onClick={() => window.open("https://github.com/yourusername/insightai", "_blank")}
+            onClick={() =>
+              window.open(
+                "https://github.com/roshhni97/insight-data-whisperer",
+                "_blank"
+              )
+            }
           >
             <Github size={16} />
             <span className="hidden sm:inline">GitHub</span>
